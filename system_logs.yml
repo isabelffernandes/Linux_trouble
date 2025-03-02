@@ -1,0 +1,114 @@
+Fonte: https://medium.com/@SambathKumarJ/mastering-linux-troubleshooting-a-comprehensive-guide-for-real-world-issues-b716507c1a81
+      https://devopscube.com/list-linux-networking-troubleshooting-and-commands-beginners/
+
+
+
+- Logs are your first line of defense.
+
+ sudo tail -f /var/log/syslog
+ sudo journalctl -xe
+ 
+ — For systemd-based services, use: 
+
+ sudo systemctl status <service_name>
+
+#systewm resource
+top # Interactive view of running processes
+htop # More user-friendly version of 'top'
+df -h # Check disk usage
+free -m # Check memory usage
+
+#kill
+ps aux | grep <service_name>
+sudo kill -9 <PID>
+
+#service off
+sudo systemctl status <service_name>
+sudo journalctl -u <service_name> - since "5 minutes ago"
+ 
+- Solution: Restart the service:
+ 
+sudo systemctl restart <service_name>
+
+#networking issue
+ip a
+ping -c 4 google.com
+ 
+- Solution:
+ 
+- Restart the network interface: 
+
+sudo ifdown <interface> && sudo ifup <interface>
+For DNS issues, verify `/etc/resolv.conf`
+
+#disk space
+du -sh /var/* | sort -rh | head -10
+ 
+- Solution:
+ - Clean up logs: 
+
+ sudo rm -f /var/log/*.old
+ 
+ - Empty cache:
+ 
+ sudo sync && sudo sysctl -w vm.drop_caches=3
+
+ #slow 
+ top -o %CPU # Sort by CPU usage
+top -o %MEM # Sort by memory usage
+ 
+- Solution:
+ - Stop unnecessary services:
+ 
+sudo systemctl stop <service_name>
+ 
+ - Tune system performance using `sysctl`:
+ 
+sudo sysctl -w vm.swappiness=10
+
+#permission 
+ls -l 
+ls -lha
+ 
+- Solution:
+ - Correct ownership: 
+ sudo chown <user>:<group> <file>
+ 
+ - Adjust permissions:
+ 
+ sudo chmod 755 <file>
+
+chmod 755 file.txt       # Owner: rwx, Group: r-x, Others: r-x
+chmod 644 file.txt       # Owner: rw-, Group: r--, Others: r-- 
+
+#commands
+| Command | Purpose |
+
+| dmesg | View kernel messages |
+| strace | Trace system calls of a process |
+| netstat / ss | Check network connections |
+| lsof | List open files by processes |
+| iotop | Monitor disk I/O usage |
+| uptime | Check system load averages |
+
+
+sudo systemctl status ssh
+
+#Test connectivity with:
+
+telnet <server_ip> 22  # Verify if the port is open.
+sudo systemctl restart ssh
+
+#Check firewall rules:
+
+sudo ufw status sudo ufw allow 22/tcp
+chmod 600 ~/.ssh/id_rsa chmod 700 ~/.ssh
+
+
+#listen port
+ss -lt
+
+traceroute google.com
+lsof -i :8080
+
+rm -rf /tmp/* # Remove temporary files

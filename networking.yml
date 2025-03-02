@@ -1,6 +1,7 @@
 ping <hostname or IP>
 # Example: Test connectivity to Google's DNS server
 ping 8.8.8.8
+ping hostname
 netstat -tuln  # List open ports and listening services
 netstat -an     # List all connections (both listening and established)
 ifconfig  # Shows the status of all interfaces (old command)
@@ -14,3 +15,13 @@ route -n  # Shows the routing table
 ip route  # Also shows the routing table (more modern)
 dig google.com  # Resolves the domain to an IP address
 iptables -L
+
+sudo ip route add default via 192.168.122.1
+cat /etc/resolv.conf #here you add dns as like (DNS=1.1.1.1 8.8.8.8)
+#resolve tool
+resolvectl status
+sudo systemctl restart systemd-resolved.service
+
+sudo ufw status numbered
+sudo ufw allow to 192.168.122.44 proto tcp port 6379
+sudo ss -nltp
