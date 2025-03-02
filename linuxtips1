@@ -1,0 +1,105 @@
+Last login: Sun Mar  2 15:33:46 on ttys000
+care1@care1s-MacBook-Pro ~ % pwd
+/Users/care1
+care1@care1s-MacBook-Pro ~ % su -
+Password:
+su: Sorry
+care1@care1s-MacBook-Pro ~ % pwd
+/Users/care1
+care1@care1s-MacBook-Pro ~ % sudo su
+Password:
+sh-3.2# ls
+.CFUserTextEncoding	.vscode			Library
+.DS_Store		.zsh_history		Movies
+.Trash			.zsh_sessions		Music
+.cursor			Desktop			Pictures
+.docker			Documents		Public
+.lesshst		Downloads		VirtualBox VMs
+sh-3.2# cd -
+sh: cd: OLDPWD not set
+sh-3.2# ls -lha
+total 48
+drwxr-x---+ 20 care1  staff   640B Mar  2 16:09 .
+drwxr-xr-x   5 root   admin   160B Feb 18 15:32 ..
+-r--------   1 care1  staff     7B Dec 20  2023 .CFUserTextEncoding
+-rw-r--r--@  1 care1  staff    10K Mar  2 14:45 .DS_Store
+drwx------+  7 care1  staff   224B Mar  2 14:23 .Trash
+drwxr-xr-x@  4 care1  staff   128B Mar  1 10:13 .cursor
+drwxr-xr-x@ 10 care1  staff   320B Feb 22 20:50 .docker
+-rw-------@  1 care1  staff    20B Mar  2 15:32 .lesshst
+drwxr-xr-x@  5 care1  staff   160B Feb 22 20:49 .vscode
+-rw-------   1 care1  staff   158B Mar  2 15:33 .zsh_history
+drwx------   6 care1  staff   192B Mar  2 16:09 .zsh_sessions
+drwx------+  7 care1  staff   224B Mar  2 14:50 Desktop
+drwx------+  6 care1  staff   192B Mar  2 14:23 Documents
+drwx------+ 12 care1  staff   384B Mar  2 14:49 Downloads
+drwx------@ 90 care1  staff   2.8K Mar  1 18:33 Library
+drwx------   4 care1  staff   128B Feb 19 13:38 Movies
+drwx------+  3 care1  staff    96B Dec 20  2023 Music
+drwx------+  4 care1  staff   128B Feb 18 15:08 Pictures
+drwxr-xr-x+  4 care1  staff   128B Dec 20  2023 Public
+drwxr-xr-x   5 care1  staff   160B Mar  1 18:47 VirtualBox VMs
+sh-3.2# ls -a
+.			.lesshst		Library
+..			.vscode			Movies
+.CFUserTextEncoding	.zsh_history		Music
+.DS_Store		.zsh_sessions		Pictures
+.Trash			Desktop			Public
+.cursor			Documents		VirtualBox VMs
+.docker			Downloads
+sh-3.2# ls -al
+total 48
+drwxr-x---+ 20 care1  staff    640 Mar  2 16:09 .
+drwxr-xr-x   5 root   admin    160 Feb 18 15:32 ..
+-r--------   1 care1  staff      7 Dec 20  2023 .CFUserTextEncoding
+-rw-r--r--@  1 care1  staff  10244 Mar  2 14:45 .DS_Store
+drwx------+  7 care1  staff    224 Mar  2 14:23 .Trash
+drwxr-xr-x@  4 care1  staff    128 Mar  1 10:13 .cursor
+drwxr-xr-x@ 10 care1  staff    320 Feb 22 20:50 .docker
+-rw-------@  1 care1  staff     20 Mar  2 15:32 .lesshst
+drwxr-xr-x@  5 care1  staff    160 Feb 22 20:49 .vscode
+-rw-------   1 care1  staff    158 Mar  2 15:33 .zsh_history
+drwx------   6 care1  staff    192 Mar  2 16:09 .zsh_sessions
+drwx------+  7 care1  staff    224 Mar  2 14:50 Desktop
+drwx------+  6 care1  staff    192 Mar  2 14:23 Documents
+drwx------+ 12 care1  staff    384 Mar  2 14:49 Downloads
+drwx------@ 90 care1  staff   2880 Mar  1 18:33 Library
+drwx------   4 care1  staff    128 Feb 19 13:38 Movies
+drwx------+  3 care1  staff     96 Dec 20  2023 Music
+drwx------+  4 care1  staff    128 Feb 18 15:08 Pictures
+drwxr-xr-x+  4 care1  staff    128 Dec 20  2023 Public
+drwxr-xr-x   5 care1  staff    160 Mar  1 18:47 VirtualBox VMs
+sh-3.2# ls -lha
+total 48
+drwxr-x---+ 20 care1  staff   640B Mar  2 16:09 .
+drwxr-xr-x   5 root   admin   160B Feb 18 15:32 ..
+-r--------   1 care1  staff     7B Dec 20  2023 .CFUserTextEncoding
+-rw-r--r--@  1 care1  staff    10K Mar  2 14:45 .DS_Store
+drwx------+  7 care1  staff   224B Mar  2 14:23 .Trash
+drwxr-xr-x@  4 care1  staff   128B Mar  1 10:13 .cursor
+drwxr-xr-x@ 10 care1  staff   320B Feb 22 20:50 .docker
+-rw-------@  1 care1  staff    20B Mar  2 15:32 .lesshst
+drwxr-xr-x@  5 care1  staff   160B Feb 22 20:49 .vscode
+-rw-------   1 care1  staff   158B Mar  2 15:33 .zsh_history
+drwx------   6 care1  staff   192B Mar  2 16:09 .zsh_sessions
+drwx------+  7 care1  staff   224B Mar  2 14:50 Desktop
+drwx------+  6 care1  staff   192B Mar  2 14:23 Documents
+drwx------+ 12 care1  staff   384B Mar  2 14:49 Downloads
+drwx------@ 90 care1  staff   2.8K Mar  1 18:33 Library
+drwx------   4 care1  staff   128B Feb 19 13:38 Movies
+drwx------+  3 care1  staff    96B Dec 20  2023 Music
+drwx------+  4 care1  staff   128B Feb 18 15:08 Pictures
+drwxr-xr-x+  4 care1  staff   128B Dec 20  2023 Public
+drwxr-xr-x   5 care1  staff   160B Mar  1 18:47 VirtualBox VMs
+sh-3.2# cat /etc/shells 
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/dash
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
