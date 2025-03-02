@@ -1,0 +1,16 @@
+ping <hostname or IP>
+# Example: Test connectivity to Google's DNS server
+ping 8.8.8.8
+netstat -tuln  # List open ports and listening services
+netstat -an     # List all connections (both listening and established)
+ifconfig  # Shows the status of all interfaces (old command)
+ip a      # Shows the status of all interfaces (newer command)
+traceroute <hostname or IP>
+# Example: Tracing the route to google.com
+traceroute google.com
+ss -tuln  # Displays listening ports (similar to netstat)
+ss -s      # Shows a summary of network connections
+route -n  # Shows the routing table
+ip route  # Also shows the routing table (more modern)
+dig google.com  # Resolves the domain to an IP address
+iptables -L
